@@ -5,14 +5,14 @@
 Try to make the most complete calculator that can add, subtract, multiply and divide. Be able to store a history of calculations. 
 Practice object oriented programming and design principles.
 
-# Design Principles
+### Design Principles
 1. SOLID
 2. DRY
 3. GRASP
 4. Separation of Concerns
 5. OOP
 
-# Object-Oriented Programming
+### Object-Oriented Programming
 1. Encapsulation 
 2. Inheritance
 3. Abstraction
