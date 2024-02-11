@@ -1,6 +1,4 @@
-"""
-Contains simple arithmetic operations: addition, subtraction, multiplication, and division
-"""
+'''Contains simple arithmetic operations: addition, subtraction, multiplication, and division'''
 
 def addition(a,b):
     '''Basic addition: returns sum of a & b'''
