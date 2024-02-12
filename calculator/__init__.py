@@ -5,6 +5,7 @@ from decimal import Decimal
 from typing import Callable
 from calculator.calculation import Calculation
 from calculator.operations import Operations as op
+from calculator.calc_history import CalculationHistory as his
 
 class Calculator:
     '''Serves as a core componet of a basic calculator system. Integrates components for performing arithmetic calculations.'''
@@ -13,6 +14,8 @@ class Calculator:
     def _perform_calculation(a: Decimal, b: Decimal, operation: Callable[[Decimal, Decimal], Decimal]) -> Decimal:
         '''Performs a operation with the given operands and operation, and returns the result'''
         calculation = Calculation(a, b, operation)
+        # Add the calculation to the history managed by the Calculations class
+        his.add_calculation(calculation)
         return calculation.compute()
 
     @staticmethod
