@@ -18,19 +18,19 @@ class Calculator:
     @staticmethod
     def add(a: Decimal, b: Decimal) -> Decimal:
         '''Perform addition by delegating to the perform_calculation method with the addition operation'''
-        return Calculator.perform_calculation(a, b, op.addition)
+        return Calculator._perform_calculation(a, b, op.addition)
 
     @staticmethod
     def subtract(a: Decimal, b: Decimal) -> Decimal:
         '''Perform subtraction by delegating to the perform_calculation method with the addition operation'''
-        return Calculator.perform_calculation(a, b, op.subtraction)
+        return Calculator._perform_calculation(a, b, op.subtraction)
 
     @staticmethod
     def multiply (a: Decimal, b: Decimal) -> Decimal:
         '''Perform multiplication by delegating to the perform_calculation method with the addition operation'''
-        return Calculator.perform_calculation(a, b, op.multiplication)
+        return Calculator._perform_calculation(a, b, op.multiplication)
 
     @staticmethod
     def divide(a: Decimal, b: Decimal) -> Decimal:
         '''Perform division by delegating to the perform_calculation method with the addition operation'''
-        return Calculator.perform_calculation(a, b, op.division)
+        return Calculator._perform_calculation(a, b, op.division)
