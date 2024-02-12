@@ -10,3 +10,8 @@ class Calculator:
     def __init__(self):
         '''Initializes the Calculator with an instance of the Operations class'''
         self.operations = Operations()
+
+    def perform_calculation(self, a, b, operation):
+        '''Performs a operation with the given operands and operation, and returns the result'''
+        calculation = Calculation(a, b, operation)
+        return calculation.compute()
