@@ -15,6 +15,6 @@ class Calculation:
         # Inilitlize arithmetic operation & stores operation as a callable that takes in two decimals 
         self.operation = operation 
 
-    def get_result(self):
+    def compute(self):
         # Call the stored operation and pass it the stored operands
         return self.operation(self.a, self.b)
