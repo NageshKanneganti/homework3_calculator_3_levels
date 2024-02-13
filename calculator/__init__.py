@@ -8,7 +8,7 @@ from calculator.operations import Operations as op
 from calculator.calc_history import CalculationHistory as his
 
 class Calculator:
-    '''Serves as a core componet of a basic calculator system. Integrates components for performing arithmetic calculations.'''
+    '''Serves as a core componet of a basic calculator system. Integrates components for performing arithmetic calculations and managing history.'''
 
     @staticmethod
     def _perform_calculation(a: Decimal, b: Decimal, operation: Callable[[Decimal, Decimal], Decimal]) -> Decimal:
