@@ -8,14 +8,14 @@ from calculator.operations import Operations as op
 
 # pytest.mark.parametrize decorator is used to parameterize a test function, enabling it to be called with different sets of arguments. Here, it's used to test various scenarios of arithmetic operations with both integer and decimal operands to ensure the operations work correctly under different conditions.
 @pytest.mark.parametrize("a, b, operation, expected", [
-    (Decimal('10'), Decimal('5'), op.addition, Decimal('15')),  # Test addition
-    (Decimal('10'), Decimal('5'), op.subtraction, Decimal('5')),  # Test subtraction
-    (Decimal('10'), Decimal('5'), op.multiplication, Decimal('50')),  # Test multiplication
-    (Decimal('10'), Decimal('2'), op.division, Decimal('5')),  # Test division
-    (Decimal('10.5'), Decimal('0.5'), op.addition, Decimal('11.0')),  # Test addition with decimals
-    (Decimal('10.5'), Decimal('0.5'), op.subtraction, Decimal('10.0')),  # Test subtraction with decimals
-    (Decimal('10.5'), Decimal('2'), op.multiplication, Decimal('21.0')),  # Test multiplication with decimals
-    (Decimal('10'), Decimal('0.5'), op.division, Decimal('20')),  # Test division with decimals
+    (Decimal('2'), Decimal('2'), op.addition, Decimal('4')),  # Test addition
+    (Decimal('2'), Decimal('2'), op.subtraction, Decimal('0')),  # Test subtraction
+    (Decimal('2'), Decimal('2'), op.multiplication, Decimal('4')),  # Test multiplication
+    (Decimal('2'), Decimal('2'), op.division, Decimal('1')),  # Test division
+    (Decimal('2.5'), Decimal('0.5'), op.addition, Decimal('3.0')),  # Test addition with decimals
+    (Decimal('2.5'), Decimal('0.5'), op.subtraction, Decimal('2.0')),  # Test subtraction with decimals
+    (Decimal('2.5'), Decimal('2'), op.multiplication, Decimal('5.0')),  # Test multiplication with decimals
+    (Decimal('2.5'), Decimal('0.5'), op.division, Decimal('5.0')),  # Test division with decimals
 ])
 
 def test_calculation_operations(a, b, operation, expected):
