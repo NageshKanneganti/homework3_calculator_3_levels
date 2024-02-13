@@ -3,7 +3,6 @@ Defines a single calculation. Provides abstraction for handeling individual calc
 """
 from decimal import Decimal
 from typing import Callable
-from calculator.operations import Operations
 
 class Calculation:
     '''Defines a single calculation'''
