@@ -13,7 +13,7 @@ class Calculator:
     @staticmethod
     def _perform_calculation(a: Decimal, b: Decimal, operation: Callable[[Decimal, Decimal], Decimal]) -> Decimal:
         '''Performs a operation with the given operands and operation, and returns the result'''
-        calculation = Calculation(a, b, operation)
+        calculation = Calculation.create_calculation(a, b, operation)
         # Add the calculation to the history managed by the Calculations class
         his.add_calculation(calculation)
         return calculation.compute()

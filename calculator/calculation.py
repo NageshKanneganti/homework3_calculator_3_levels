@@ -15,6 +15,11 @@ class Calculation:
         # Inilitlize arithmetic operation & stores operation as a callable that takes in two decimals 
         self.operation = operation 
 
+    @staticmethod
+    def create_calculation(a: Decimal, b: Decimal, operation: Callable[[Decimal, Decimal], Decimal]):
+        '''Factory that allows us to create instances of Calculation w/out directly calling Calculation class'''
+        return Calculation(a, b, operation)
+
     def compute(self):
         # Call the stored operation and pass it the stored operands
         return self.operation(self.a, self.b)
