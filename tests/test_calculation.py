@@ -18,11 +18,11 @@ from calculator.operations import Operations as op
     (Decimal('10'), Decimal('0.5'), op.division, Decimal('20')),  # Test division with decimals
 ])
 
-def test_calculation_operation(a, b, operation, expected):
+def test_calculation_operations(a, b, operation, expected):
     '''Test calculation compute method with various scenarios'''
-    # Create a Calculation instance with the provided operands and operation.
-    calc = Calculation(a, b, operation)
-    # Perform the operation and assert that the result matches the expected value.
+    # Create a Calculation instance with the operands and operations from parametrized test data.
+    calc = Calculation.create_calculation(a, b, operation)
+    # Assert if the actual output from compute method matches expected from parameterized test data.
     assert calc.compute() == expected, f"Failed {operation.__name__} operation with {a} and {b}"
 
 def test_calculation_divide_by_zero():
