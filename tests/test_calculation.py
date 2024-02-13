@@ -19,15 +19,7 @@ from calculator.operations import Operations as op
 ])
 
 def test_calculation_operation(a, b, operation, expected):
-    '''
-    Test calculation compute method with various scenarios.
-    
-    Parameters:
-        a (Decimal): The first operand in the calculation.
-        b (Decimal): The second operand in the calculation.
-        operation (function): The arithmetic operation to perform.
-        expected (Decimal): The expected result of the operation.
-    '''
+    '''Test calculation compute method with various scenarios'''
     # Create a Calculation instance with the provided operands and operation.
     calc = Calculation(a, b, operation)
     # Perform the operation and assert that the result matches the expected value.
@@ -38,3 +30,12 @@ def test_calculation_divide_by_zero():
     with pytest.raises(ValueError):
         calc = Calculation(Decimal('5'), Decimal('0'), op.division)
         calc.compute()
+
+def test_calculation_string_representation():
+    '''Test __repr__ of Calculation class. Determines if string representation is accurate.'''
+    # Create calculation instance
+    str_rep = Calculation(Decimal('10'), Decimal('5'), op.addition)
+    # Define expected string representation
+    expected_rep = "Calculation(10, 5, addition)"
+    # Assert that the actual output matches the expected output
+    assert str_rep.__repr__() == expected_rep, "The __repr__ method output does not match the expected string"
