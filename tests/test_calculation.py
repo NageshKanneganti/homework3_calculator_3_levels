@@ -2,25 +2,24 @@
 # Disable specific pylint warnings that are not relevant for this file.
 # pylint: disable=unnecessary-dunder-call, invalid-name
 from decimal import Decimal
-from typing import Callable
 import pytest
 from calculator.calculation import Calculation
 from calculator.operations import Operations as op
 
 # pytest.mark.parametrize decorator is used to parameterize a test function, enabling it to be called with different sets of arguments. Here, it's used to test various scenarios of arithmetic operations with both integer and decimal operands to ensure the operations work correctly under different conditions.
 @pytest.mark.parametrize("a, b, operation, expected", [
-    (2, 2, op.addition, 4),  # Test addition
-    (2, 2, op.subtraction, 0),  # Test subtraction
-    (2, 2, op.multiplication, 4),  # Test multiplication
-    (2, 2, op.division, 1),  # Test division
-    (2.5, 0.5, op.addition, 3.0),  # Test addition with decimals
-    (2.5, 0.5, op.subtraction, 2.0),  # Test subtraction with decimals
-    (2.5, 2, op.multiplication, 5.0),  # Test multiplication with decimals
-    (2.5, 0.5, op.division, 5.0),  # Test division with decimals
+    (Decimal('2'), Decimal('2'), op.addition, Decimal('4')),  # Test addition
+    (Decimal('2'), Decimal('2'), op.subtraction, Decimal('0.0')),  # Test subtraction
+    (Decimal('2'), Decimal('2'), op.multiplication, Decimal('4.0')),  # Test multiplication
+    (Decimal('2'), Decimal('2'), op.division, Decimal('1.0')),  # Test division
+    (Decimal('2.5'), Decimal('0.5'), op.addition, Decimal('3.0')),  # Test addition with decimals
+    (Decimal('2.5'), Decimal('0.5'), op.subtraction, Decimal('2.0')),  # Test subtraction with decimals
+    (Decimal('2.5'), Decimal('2.0'), op.multiplication, Decimal('5.0')),  # Test multiplication with decimals
+    (Decimal('2.5'), Decimal('0.5'), op.division, Decimal('5.0')),  # Test division with decimals
 ])
 
-def test_calculation_operations(a: Decimal, b: Decimal, operation: Callable[[Decimal, Decimal], Decimal], expected: Decimal):
-    '''Test calculation compute method with various scenarios'''
+def test_calculation_operations(a, b, operation, expected):
+    ''' Test calculation compute method with various scenarios'''
     # Create a Calculation instance with the operands and operations from parametrized test data.
     calc = Calculation.create_calculation(a, b, operation)
     # Assert if the actual output from compute method matches expected from parameterized test data.
